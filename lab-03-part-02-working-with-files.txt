@@ -37,7 +37,7 @@ $ ls
 Copy and paste the output below.
 ----------
 
-
+foo.txt
 
 ==========
 7. Create another new file using touch.
@@ -45,7 +45,7 @@ Copy and paste the output below.
 $ touch bar.txt
 ----------
 
-
+bar.txt foo.txt
 
 ==========
 8. List the files in this directory using the flag that gives the most details.
@@ -53,7 +53,8 @@ $ touch bar.txt
 Copy and paste the output below.
 ----------
 
-
+-rw-r--r--  1 student  staff  0 Feb 15 15:05 bar.txt
+-rw-r--r--  1 student  staff  0 Feb 15 15:04 foo.txt
 
 ==========
 9. Create a copy of bar.txt called baz.txt and then list the files again.
@@ -62,13 +63,16 @@ Copy and paste the output below.
 Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
 ----------
 
+cp bar.txt baz.txt
 
+bar.txt	baz.txt	foo.txt
 
 ==========
 10. Delete the file called bar.txt and then list the files again.
 
 Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
 ----------
+baz.txt	foo.txt
 ==========
 11. Move the file called foo.txt to qux.txt and then list the files again.
 
@@ -76,7 +80,7 @@ Write the command that you used to remove the file.  Copy and paste the output o
 Write the command that you used to move the file.  Copy and paste the output of your file listing below.
 ----------
 
-
+mv foo.txt qux.txt
 
 ==========
 12. Go up one directory so that you're in ~/mtec1002-lab-03.
@@ -91,7 +95,8 @@ Write the command that you used to move the file.  Copy and paste the output of 
 Write out the command that you used and what happened.
 ----------
 
-
+rmdir my_files
+The directory is not empty and cannot be deleted.
 
 ==========
 14. Try removing the directory called my_files using rm.
@@ -99,7 +104,8 @@ Write out the command that you used and what happened.
 Write out the command that you used and what happened.
 ----------
 
-
+rm my_files
+my_files is a directory and can't be deleted
 
 ==========
 15. MAKE SURE YOU'RE IN THE mtec1002-lab-03 directory!  
@@ -109,7 +115,7 @@ Force the removal of the directory and files using the -rf flag
 $ rm -rf my_files
 ----------
 
-
+[NO OUTPUT]
 
 ==========
 16. There's a txt file version of a book located in the mtec1002-lab-03 folder.  It is in the following directory if you're in the lab folder:
@@ -120,8 +126,7 @@ Use the command called cat on the file to show its contents.
 
 Describe what happened below.
 ----------
-
-
+The contents of the file are displayed.
 
 ==========
 17. That was a lot of text.  Let's find ways to limit it.  Using the same file...
@@ -133,7 +138,8 @@ Use the command, head, on the file to show the contents of the beginning of the 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
 
-
+head books/other/pg1232.txt
+Title: The Prince
 
 ==========
 18. Using the same file again!
@@ -145,7 +151,11 @@ Use tail on the file to show the contents of the end of the file.
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
 
-
+tail books/other/pg1232.txt
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
 
 ==========
 19. Using the same file...
@@ -157,7 +167,10 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
 
+more books/other/pg1232.txt
+less books/other/pg1232.txt
 
+Spacebar scrolls prints another portion of the file and "q" quits.
 
 ==========
 20. Describe what situations you would use the following commands for viewing files: less, more, cat, tail, head
@@ -165,14 +178,20 @@ Write the command that you used below.  Describe what spacebar and q does after 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
 
+I would use tail to view the end of a file and I would use head to see the beginning of a file. Cat would display all of the file's contents. Less/More would be used to read it a portion at a time.
 
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
 
+There are 52639 words in pg1232.txt.
 
+wc -w books/other/pg1232.txt
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
+
+There are 5063 lines in pg1232.txt
+wc -l books/other/pg1232.txt
