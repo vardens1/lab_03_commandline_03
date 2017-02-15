@@ -138,7 +138,7 @@ Write the command(s) that you used to do this below:
 ----------
 
 cd ~
-cd users/student/desktop/mtec1002-lab-03/books/science-fiction
+cd /users/student/desktop/mtec1002-lab-03/books/science-fiction
 pwd
 
 ==========
